@@ -1,0 +1,15 @@
+// Builds the Ghidra extension zip: gradle -PGHIDRA_INSTALL_DIR=<path to Ghidra>
+// (or set the GHIDRA_INSTALL_DIR environment variable). The zip is written to dist/.
+def ghidraInstallDir
+if (System.env.GHIDRA_INSTALL_DIR) {
+	ghidraInstallDir = System.env.GHIDRA_INSTALL_DIR
+}
+else if (project.hasProperty("GHIDRA_INSTALL_DIR")) {
+	ghidraInstallDir = project.getProperty("GHIDRA_INSTALL_DIR")
+}
+if (ghidraInstallDir) {
+	apply from: new File(ghidraInstallDir).getCanonicalPath() + "/support/buildExtension.gradle"
+}
+else {
+	throw new GradleException("GHIDRA_INSTALL_DIR is not defined")
+}
