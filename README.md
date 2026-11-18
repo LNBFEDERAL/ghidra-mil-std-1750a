@@ -2,8 +2,6 @@
 
 # MIL-STD-1750A Processor Module for Ghidra
 
-LNB Federal Corporation | https://www.lnbfederal.com | Project page: https://www.lnbfederal.com/open-source/ghidra-mil-std-1750a/
-
 ## 1. Overview
 
 This repository contains a processor module (Ghidra extension) for the MIL-STD-1750A instruction set architecture.
